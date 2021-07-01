@@ -90,9 +90,16 @@ COPY 10_nvidia.json /usr/share/glvnd/egl_vendor.d/10_nvidia.json
 # Delete this block and be sad
 #====================================================================================================
 #====================================================================================================
-RUN apt-get update && apt-get install -y --no-install-recommends \
-        libglvnd-dev libglvnd-dev:i386 \
-        libgl1-mesa-dev libgl1-mesa-dev:i386 \
-        libegl1-mesa-dev libegl1-mesa-dev:i386 \
-        libegl1 libegl1:i386 && \
-        rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#         libglvnd-dev libglvnd-dev:i386 \
+#         libgl1-mesa-dev libgl1-mesa-dev:i386 \
+#         libegl1-mesa-dev libegl1-mesa-dev:i386 \
+#         libegl1 libegl1:i386 && \
+#         rm -rf /var/lib/apt/lists/*
+
+# Add this block and be happy
+#====================================================================================================
+#====================================================================================================
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#         libegl1 libegl1:i386 && \
+#         rm -rf /var/lib/apt/lists/*
