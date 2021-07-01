@@ -75,17 +75,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 #====================================================================================================
 RUN git clone https://github.com/erwincoumans/egl_example.git && cd ./egl_example && bash ./build.sh
 
-# From glvnd-devel
-#====================================================================================================
-#====================================================================================================
-RUN apt-get update && apt-get install -y --no-install-recommends \
-        pkg-config \
-        libglvnd-dev libglvnd-dev:i386 \
-        libgl1-mesa-dev libgl1-mesa-dev:i386 \
-        libegl1-mesa-dev libegl1-mesa-dev:i386 \
-        libgles2-mesa-dev libgles2-mesa-dev:i386 && \
-    rm -rf /var/lib/apt/lists/*
-
 # From glvnd-runtime
 #====================================================================================================
 #====================================================================================================
@@ -98,9 +87,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY 10_nvidia.json /usr/share/glvnd/egl_vendor.d/10_nvidia.json
 
-# Delete this line and be sad
+# Delete this block and be sad
 #====================================================================================================
 #====================================================================================================
 RUN apt-get update && apt-get install -y --no-install-recommends \
+        libglvnd-dev libglvnd-dev:i386 \
+        libgl1-mesa-dev libgl1-mesa-dev:i386 \
+        libegl1-mesa-dev libegl1-mesa-dev:i386 \
         libegl1 libegl1:i386 && \
         rm -rf /var/lib/apt/lists/*
