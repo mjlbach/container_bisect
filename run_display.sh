@@ -1,4 +1,4 @@
-podman build -f Dockerfile.minimal -t cuda-test-1 && \
+podman build -f Dockerfile.extreme_minimal -t cuda-test-1 && \
 podman run --rm -it --net=host \
 --security-opt=no-new-privileges \
 --security-opt label=type:nvidia_container_t \

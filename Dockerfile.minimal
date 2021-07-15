@@ -43,16 +43,16 @@ ENV NCCL_VERSION 2.8.4
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libtinfo5 libncursesw5 \
-    cuda-cudart-dev-11-1=11.1.74-1 \
+    # cuda-cudart-dev-11-1=11.1.74-1 \
     cuda-command-line-tools-11-1=11.1.1-1 \
-    cuda-minimal-build-11-1=11.1.1-1 \
+    # cuda-minimal-build-11-1=11.1.1-1 \
     cuda-libraries-dev-11-1=11.1.1-1 \
-    cuda-nvml-dev-11-1=11.1.74-1 \
-    libnpp-dev-11-1=11.1.2.301-1 \
+    # cuda-nvml-dev-11-1=11.1.74-1 \
+    # libnpp-dev-11-1=11.1.2.301-1 \
     #This does not, in fact, work
     # libnccl-dev=2.8.4-1+cuda11.1 \
-    libcublas-dev-11-1=11.3.0.106-1 \
-    libcusparse-dev-11-1=11.3.0.10-1 \
+    # libcublas-dev-11-1=11.3.0.106-1 \
+    # libcusparse-dev-11-1=11.3.0.10-1 \
     && rm -rf /var/lib/apt/lists/*
 
 # apt from auto upgrading the cublas package. See https://gitlab.com/nvidia/container-images/cuda/-/issues/88
@@ -78,7 +78,7 @@ ENV LD_LIBRARY_PATH /usr/lib/x86_64-linux-gnu:/usr/lib/i386-linux-gnu${LD_LIBRAR
 #====================================================================================================
 #====================================================================================================
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        pkg-config \
+        # pkg-config \
         g++ \
         git && \
     rm -rf /var/lib/apt/lists/*
